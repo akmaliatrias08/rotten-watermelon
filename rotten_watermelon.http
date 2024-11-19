@@ -1,16 +1,27 @@
 ###
 http://localhost:5000
 
-###
-http://localhost:5000/roles/id
+### get all role
+http://localhost:5000/roles
 
 ### create roles
 POST http://localhost:5000/roles
 Content-Type: application/json
 
 {
-    "role": "criticus"
+    "role": "role"
 }
 
 ### get one role by id
-GET http://localhost:5000/roles/76055c63-ee58-46d3-bc28-870535fc10c2
+GET http://localhost:5000/roles/7a6401b1-0d62-4c99-aa18-909682190e91
+
+### update role by id
+PUT http://localhost:5000/roles/7a6401b1-0d62-4c99-aa18-909682190e93
+Content-Type: application/json
+
+{
+    "role": "audience"
+}
+
+### delete role by id
+DELETE http://localhost:5000/roles/a9864a4d-5dd2-47cd-ade4-c3004b0f1f70
