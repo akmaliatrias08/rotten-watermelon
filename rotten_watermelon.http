@@ -1,0 +1,16 @@
+###
+http://localhost:5000
+
+###
+http://localhost:5000/roles/id
+
+### create roles
+POST http://localhost:5000/roles
+Content-Type: application/json
+
+{
+    "role": "criticus"
+}
+
+### get one role by id
+GET http://localhost:5000/roles/76055c63-ee58-46d3-bc28-870535fc10c2

@@ -1,0 +1,18 @@
+{
+  "transforms": [
+    {
+      "mode": "sql",
+      "include": "**/queries/*.sql",
+      "emitTemplate": "{{dir}}/__generated__/{{name}}.ts"
+    }
+  ],
+  "srcDir": "./src/",
+  "failOnError": false,
+  "camelCaseColumnNames": false,
+  "db": {
+    "dbName": "rotten-db",
+    "host": "localhost",
+    "user": "postgres",
+    "password": "123"
+  }
+}
