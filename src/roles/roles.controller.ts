@@ -31,7 +31,7 @@ export class RolesController {
     }
     
     @Delete('/:id')
-    deleteById(@Param('id') id: string){
+    deleteById(@Param('id', ParseUUIDPipe) id: string){
         return this.rolesService.deleteById(id)
     }
 }

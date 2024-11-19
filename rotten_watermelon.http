@@ -16,7 +16,7 @@ Content-Type: application/json
 GET http://localhost:5000/roles/7a6401b1-0d62-4c99-aa18-909682190e91
 
 ### update role by id
-PUT http://localhost:5000/roles/7a6401b1-0d62-4c99-aa18-909682190e93
+PUT http://localhost:5000/roles/7a6401b1-0d62-4c99-aa18-909682190e91
 Content-Type: application/json
 
 {
@@ -24,4 +24,4 @@ Content-Type: application/json
 }
 
 ### delete role by id
-DELETE http://localhost:5000/roles/a9864a4d-5dd2-47cd-ade4-c3004b0f1f70
+DELETE http://localhost:5000/roles/12

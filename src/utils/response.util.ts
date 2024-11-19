@@ -14,7 +14,7 @@ export class ResponseUtil {
     details: string,
     code :HttpStatus = HttpStatus.INTERNAL_SERVER_ERROR
   ) {
-    return new HttpException({
+    return {
         success: false, 
         code,
         error: {
@@ -22,6 +22,6 @@ export class ResponseUtil {
             details: details
         } 
 
-    }, code)
+    }
   }
 }
