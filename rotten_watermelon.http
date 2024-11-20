@@ -9,7 +9,7 @@ POST http://localhost:5000/roles
 Content-Type: application/json
 
 {
-    "role": "role"
+    "role": "audience"
 }
 
 ### get one role by id
@@ -25,3 +25,40 @@ Content-Type: application/json
 
 ### delete role by id
 DELETE http://localhost:5000/roles/12
+
+### get all users
+GET http://localhost:5000/users
+
+### get user by id
+GET http://localhost:5000/users/9214ebc5-cb65-4acb-8e48-2b3e3ce4d324
+
+### delete user by id
+DELETE http://localhost:5000/users/9214ebc5-cb65-4acb-8e48-2b3e3ce4d321
+
+### register user
+POST http://localhost:5000/auth/register
+Content-Type: application/json
+
+{
+    "role_id": "7641ac4d-4abe-4b19-b824-8c9abda77e62", 
+    "email": "akmaliatrias13@yahoo.com",
+    "username": "akmaliatrias22", 
+    "password": "123", 
+    "avatar": "photo.jpg"
+}
+
+### login user
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+    "email": "akmaliatrias13@yahoo.com", 
+    "password": "123"
+}
+
+### authorize-token
+GET http://localhost:5000/auth/authorize-token
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFrbWFsaWF0cmlhczEzQHlhaG9vLmNvbSIsInN1YiI6IjQ4OTk5ZmYzLWJjY2ItNDI3ZS04MGVhLTY4NjUwYTYzZmZhZSIsImlhdCI6MTczMjA3NzIzOCwiZXhwIjoxNzMyMTYzNjM4fQ.iCp5ob9Dl0trJlSQu39164AaEbKbkorO4m9C5wTWEuO
+
+
+
