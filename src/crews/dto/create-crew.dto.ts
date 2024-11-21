@@ -8,7 +8,7 @@ export class CreateCrewDTO{
     @IsNotEmpty()
     name: string
 
-    birthday: Date
+    birthday: string
 
     birthplace: string
 

@@ -45,6 +45,11 @@ export class CrewsService {
         try {
             await this.dbClient.query('BEGIN')
 
+            //validation date can be empty
+            if(createCrewDTO.birthday == ""){
+                createCrewDTO.birthday = null
+            }
+
             //create upload crew 
             const crew = await createCrew.run(createCrewDTO, this.dbClient)
 
@@ -55,18 +60,15 @@ export class CrewsService {
             const crewId = crew[0].id
             
             //create upload photos 
-            const photos = await Promise.all(createCrewDTO.photos.map(({photo}) => { return {crew_id: crewId, photo} }))
-            const uploadPhotos = await createCrewPhotos.run({crewPhotos: photos}, this.dbClient)
+            const photos = createCrewDTO.photos.length > 0 ? await Promise.all(createCrewDTO.photos.map(({photo}) => { return {crew_id: crewId, photo} })) : []
             
-            if(uploadPhotos.length === 0){
-                throw new Error('failed to insert crew photos');
-            }
+            const uploadPhotos = photos.length > 0 ? await createCrewPhotos.run({crewPhotos: photos}, this.dbClient) : []
 
             await this.dbClient.query('COMMIT')
             return ResponseUtil.success({...crew[0], photos: uploadPhotos}, HttpStatus.CREATED);
         } catch (e) {
-            await this.dbClient.query('ROLLBACK')
-            throw new HttpException(ResponseUtil.error("internal server error", e.message), HttpStatus.INTERNAL_SERVER_ERROR) 
+            await this.dbClient.query('ROLLBACK')    
+            throw new HttpException(ResponseUtil.error(e.message, e.detail), HttpStatus.INTERNAL_SERVER_ERROR) 
         }
     }
 

@@ -63,21 +63,20 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFrbWFsa
 ### create crews
 POST http://localhost:5000/crews
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFrbWFsaWF0cmlhczEzQHlhaG9vLmNvbSIsInN1YiI6IjQ4OTk5ZmYzLWJjY2ItNDI3ZS04MGVhLTY4NjUwYTYzZmZhZSIsImlhdCI6MTczMjE3MTk1NiwiZXhwIjoxNzMyMjU4MzU2fQ.DQu56yGI30mAL49tVcq7axuLjgHEU7CWdtivMZ18XIQ
 
-{
-    "name": "James Watt", 
-    "birthday": "1945-11-01", 
-    "birthplace": "Los Angles, California, USA", 
-    "biography": "Jon M. Chu attended the USC School of Cinematic Arts and his talents were immediately recognized. He won a number of awards for his short film work--the musicals Silent Beats and When the Kids Are Away--such as the Jack Nicholson Directing Award, the Kodak Student Filmmaker Award, and the Princess Grace Award, among others. His work on When the Kids Are Away an energetic and humorous musical about what mothers really get up to when their kids are out of the house, nabbed Chu representation at the William Morris Agency and the possibility of Hollywood success was at his fingertips", 
-    "photos": [
-        {"photo": "photo1.jpg"},
-        {"photo": "photo2.jpg"},
-        {"photo": "photo3.jpg"}
-    ]
+{ 
+    "name": "Hayao Miyazaki",
+    "birthday": "1941-01-05",
+    "birthplace": "Tokyo, Japan",
+    "biography": "Hayao Miyazaki is a legendary Japanese animator, director, and co-founder of Studio Ghibli. His works, including Spirited Away, My Neighbor Totoro, and Princess Mononoke, are celebrated for their breathtaking animation, rich storytelling, and environmental themes.",
+    "photos": []
 }
 
 ### get all crews
 GET http://localhost:5000/crews
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFrbWFsaWF0cmlhczEzQHlhaG9vLmNvbSIsInN1YiI6IjQ4OTk5ZmYzLWJjY2ItNDI3ZS04MGVhLTY4NjUwYTYzZmZhZSIsImlhdCI6MTczMjE3MTk1NiwiZXhwIjoxNzMyMjU4MzU2fQ.DQu56yGI30mAL49tVcq7axuLjgHEU7CWdtivMZ18XIQ
+
 
 ## get one crews by id
 GET http://localhost:5000/crews/1821610c-b9a9-4315-b718-bc1110b19372
@@ -101,56 +100,131 @@ Content-Type: application/json
 ### delete by id
 DELETE http://localhost:5000/crews/d4dde888-e468-4bdf-8625-be4853cb5829
 
-### create movie type
-POST http://localhost:5000/movies-types
+### create movie 
+POST http://localhost:5000/movies-s
 Content-Type: application/json
 
 {
-    "type": "TV/Sitkom"
+    "": "TV/Sitkom"
 }
 
-### get all movie type
-GET http://localhost:5000/movies-types
+### get all movie 
+GET http://localhost:5000/movies-s
 
-### get one movie type by id
-GET http://localhost:5000/movies-types/2b79799e-3e6e-443c-8f17-af9259999477
+### get one movie  by id
+GET http://localhost:5000/movies-s/2b79799e-3e6e-443c-8f17-af9259999477
 
-### update movie type by id
-PUT http://localhost:5000/movies-types/2b79799e-3e6e-443c-8f17-af9259999477
+### update movie  by id
+PUT http://localhost:5000/movies-s/2b79799e-3e6e-443c-8f17-af9259999477
 Content-Type: application/json
 
 {
-    "type": "TV"
+    "": "TV"
 }
 
-### delete movie type by id
-DELETE http://localhost:5000/movies-types/2b79799e-3e6e-443c-8f17-af9259999477
+### delete movie  by id
+DELETE http://localhost:5000/movies-s/2b79799e-3e6e-443c-8f17-af9259999477
 
 ### create crew position
 POST http://localhost:5000/crews-positions
 Content-Type: application/json
 
 {
-    "position": "Director"
+    "position": "Producer"
 }
 
 ### get all crew position
 GET http://localhost:5000/crews-positions
 
 ### get one crew position by id
-GET http://localhost:5000/crews-positions/1c399893-168e-4f53-9324-4f5144a72100
+GET http://localhost:5000/crews-positions/cf3897ef-5abf-4f3f-9f71-2aefd5e3920a
 
 ### update crew position by id
-PUT http://localhost:5000/crews-positions/1c399893-168e-4f53-9324-4f5144a7210c
+PUT http://localhost:5000/crews-positions/cf3897ef-5abf-4f3f-9f71-2aefd5e3920a
 Content-Type: application/json
 
 {
-    "crew position": "Romance"
+    "position": "Script Writer"
 }
 
 ### delete crew position by id
-DELETE http://localhost:5000/crews-positions/1c399893-168e-4f53-9324-4f5144a7210c
+DELETE http://localhost:5000/crews-positions/cf3897ef-5abf-4f3f-9f71-2aefd5e3920a
+
+### create movies
+POST http://localhost:5000/movies
+Content-Type: application/json
+
+{
+    "movie_type_id": "ab2c54c9-b1d3-4b3f-a399-d26d85ca4358",
+    "title": "The Batman",
+    "synopsis": "Bruce Wayne faces the Riddler, a mysterious criminal targeting Gotham's elite, while uncovering secrets about his family's past.",
+    "distributor": "Warner Bros. Pictures",
+    "rating": "PG-13 (Violence|Dark Themes)",
+    "production_co": "DC Films, 6th & Idaho Productions",
+    "original_lang": "English",
+    "release_date_theather": "2022-03-04",
+    "release_date_streaming": "2022-05-18",
+    "runtime": "02:56:00",
+    "soundmix": "Dolby Atmos",
+    "moviesGenres": [
+        {"genre_id": "e1417639-d61f-47ec-b89f-f82436ef8f4c"}, 
+        {"genre_id": "187d98de-6223-428d-87cf-22f8fd3797a4"}, 
+        {"genre_id": "85e6a1a8-b598-4ed8-a8a4-774dea0c2db0"}, 
+        {"genre_id": "1bde8853-0adf-4ab2-a582-f4c87eb98dd3"}
+    ],
+    "moviesPostres": [
+        {"poster": "poster1.jpg"},
+        {"poster": "poster2.jpg"},
+        {"poster": "poster3.jpg"}
+    ],
+    "moviesCrewPosition":[
+        {
+            "crew_id": "4b7552b3-3bb6-44c9-bef9-c91fbd3940cc", 
+            "position_id": "47684fd5-1eaf-4bf2-b4bb-e51e0a530264"
+        }, 
+        {
+            "crew_id": "4b7552b3-3bb6-44c9-bef9-c91fbd3940cc", 
+            "position_id": "4a9ce556-073a-442e-8ed8-898d7bae5a03"
+        }
+    ]
+}
+
+### get genre
+GET http://localhost:5000/genres
+
+## get crew 
+GET http://localhost:5000/crews
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFrbWFsaWF0cmlhczEzQHlhaG9vLmNvbSIsInN1YiI6IjQ4OTk5ZmYzLWJjY2ItNDI3ZS04MGVhLTY4NjUwYTYzZmZhZSIsImlhdCI6MTczMjE3MTk1NiwiZXhwIjoxNzMyMjU4MzU2fQ.DQu56yGI30mAL49tVcq7axuLjgHEU7CWdtivMZ18XIQ
+
+## get positions
+POST http://localhost:5000/crews-positions
+Content-Type: application/json
+
+{
+    "position": "Sound Designer"
+}
 
 
+### create movie 
+POST http://localhost:5000/genres
+Content-Type: application/json
 
+{ "genre": "Sci-Fi" }
+
+### get all movie genre
+GET http://localhost:5000/genres
+
+### get one movie genre by id
+GET http://localhost:5000/genres/2b79799e-3e6e-443c-8f17-af9259999477
+
+### update movie genre by id
+PUT http://localhost:5000/genres/2b79799e-3e6e-443c-8f17-af9259999477
+Content-Type: application/json
+
+{
+    "genre": "TV"
+}
+
+### delete movie genre by id
+DELETE http://localhost:5000/genres/2b79799e-3e6e-443c-8f17-af9259999477
 

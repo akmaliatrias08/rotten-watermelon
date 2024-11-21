@@ -9,9 +9,10 @@ import { CrewsModule } from './crews/crews.module';
 import { MoviesTypesModule } from './movies-types/movies-types.module';
 import { GenresModule } from './genres/genres.module';
 import { CrewsPositionsModule } from './crews_positions/crews_positions.module';
+import { MoviesModule } from './movies/movies.module';
 
 @Module({
-  imports: [DatabaseModule, RolesModule, UsersModule, AuthModule, CrewsModule, MoviesTypesModule, GenresModule, CrewsPositionsModule],
+  imports: [DatabaseModule, RolesModule, UsersModule, AuthModule, CrewsModule, MoviesTypesModule, GenresModule, CrewsPositionsModule, MoviesModule],
   controllers: [AppController],
   providers: [AppService],
 })

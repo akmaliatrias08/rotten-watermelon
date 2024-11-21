@@ -6,6 +6,7 @@ import { DatabaseModule } from 'src/database/database.module';
 @Module({
   imports: [DatabaseModule],
   controllers: [MoviesTypesController],
-  providers: [MoviesTypesService]
+  providers: [MoviesTypesService],
+  exports: [MoviesTypesService]
 })
 export class MoviesTypesModule {}

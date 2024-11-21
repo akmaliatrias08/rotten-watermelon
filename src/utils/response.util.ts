@@ -11,7 +11,7 @@ export class ResponseUtil {
 
   static error(
     message: string,
-    details: string,
+    details: string = "",
     code :HttpStatus = HttpStatus.INTERNAL_SERVER_ERROR
   ) {
     return {
