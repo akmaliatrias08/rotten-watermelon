@@ -6,9 +6,12 @@ import { DatabaseModule } from './database/database.module';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { CrewsModule } from './crews/crews.module';
+import { MoviesTypesModule } from './movies-types/movies-types.module';
+import { GenresModule } from './genres/genres.module';
+import { CrewsPositionsModule } from './crews_positions/crews_positions.module';
 
 @Module({
-  imports: [DatabaseModule, RolesModule, UsersModule, AuthModule, CrewsModule],
+  imports: [DatabaseModule, RolesModule, UsersModule, AuthModule, CrewsModule, MoviesTypesModule, GenresModule, CrewsPositionsModule],
   controllers: [AppController],
   providers: [AppService],
 })

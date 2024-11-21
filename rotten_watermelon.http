@@ -101,5 +101,56 @@ Content-Type: application/json
 ### delete by id
 DELETE http://localhost:5000/crews/d4dde888-e468-4bdf-8625-be4853cb5829
 
+### create movie type
+POST http://localhost:5000/movies-types
+Content-Type: application/json
+
+{
+    "type": "TV/Sitkom"
+}
+
+### get all movie type
+GET http://localhost:5000/movies-types
+
+### get one movie type by id
+GET http://localhost:5000/movies-types/2b79799e-3e6e-443c-8f17-af9259999477
+
+### update movie type by id
+PUT http://localhost:5000/movies-types/2b79799e-3e6e-443c-8f17-af9259999477
+Content-Type: application/json
+
+{
+    "type": "TV"
+}
+
+### delete movie type by id
+DELETE http://localhost:5000/movies-types/2b79799e-3e6e-443c-8f17-af9259999477
+
+### create crew position
+POST http://localhost:5000/crews-positions
+Content-Type: application/json
+
+{
+    "position": "Director"
+}
+
+### get all crew position
+GET http://localhost:5000/crews-positions
+
+### get one crew position by id
+GET http://localhost:5000/crews-positions/1c399893-168e-4f53-9324-4f5144a72100
+
+### update crew position by id
+PUT http://localhost:5000/crews-positions/1c399893-168e-4f53-9324-4f5144a7210c
+Content-Type: application/json
+
+{
+    "crew position": "Romance"
+}
+
+### delete crew position by id
+DELETE http://localhost:5000/crews-positions/1c399893-168e-4f53-9324-4f5144a7210c
+
+
 
 
