@@ -60,5 +60,46 @@ Content-Type: application/json
 GET http://localhost:5000/auth/authorize-token
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFrbWFsaWF0cmlhczEzQHlhaG9vLmNvbSIsInN1YiI6IjQ4OTk5ZmYzLWJjY2ItNDI3ZS04MGVhLTY4NjUwYTYzZmZhZSIsImlhdCI6MTczMjA3NzIzOCwiZXhwIjoxNzMyMTYzNjM4fQ.iCp5ob9Dl0trJlSQu39164AaEbKbkorO4m9C5wTWEuO
 
+### create crews
+POST http://localhost:5000/crews
+Content-Type: application/json
+
+{
+    "name": "James Watt", 
+    "birthday": "1945-11-01", 
+    "birthplace": "Los Angles, California, USA", 
+    "biography": "Jon M. Chu attended the USC School of Cinematic Arts and his talents were immediately recognized. He won a number of awards for his short film work--the musicals Silent Beats and When the Kids Are Away--such as the Jack Nicholson Directing Award, the Kodak Student Filmmaker Award, and the Princess Grace Award, among others. His work on When the Kids Are Away an energetic and humorous musical about what mothers really get up to when their kids are out of the house, nabbed Chu representation at the William Morris Agency and the possibility of Hollywood success was at his fingertips", 
+    "photos": [
+        {"photo": "photo1.jpg"},
+        {"photo": "photo2.jpg"},
+        {"photo": "photo3.jpg"}
+    ]
+}
+
+### get all crews
+GET http://localhost:5000/crews
+
+## get one crews by id
+GET http://localhost:5000/crews/1821610c-b9a9-4315-b718-bc1110b19372
+
+### update crew by id 
+PUT http://localhost:5000/crews/1821610c-b9a9-4315-b718-bc1110b19372
+Content-Type: application/json
+
+{
+    "name": "Akmalia Siapa Astaga", 
+    "birthday": "1979-11-02", 
+    "birthplace": "Palo Alto, California, USA", 
+    "biography": "Jon M. Chu attended the USC School of Cinematic Arts and his talents were immediately recognized. He won a number of awards for his short film work--the musicals Silent Beats and When the Kids Are Away--such as the Jack Nicholson Directing Award, the Kodak Student Filmmaker Award, and the Princess Grace Award, among others. His work on When the Kids Are Away an energetic and humorous musical about what mothers really get up to when their kids are out of the house, nabbed Chu representation at the William Morris Agency and the possibility of Hollywood success was at his fingertips", 
+    "photos": [
+        {"photo": "photo12.jpg"},
+        {"photo": "photo22.jpg"},
+        {"photo": "photo32.jpg"}
+    ]
+}
+
+### delete by id
+DELETE http://localhost:5000/crews/d4dde888-e468-4bdf-8625-be4853cb5829
+
 
 
